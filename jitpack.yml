@@ -1,1 +1,10 @@
 jdk: openjdk17
+# 核心构建命令：仅编译、发布指定模块（将 commons 替换为你的真实模块名）
+build:
+    - :commons:clean
+    - :commons:assembleRelease
+    - :commons:publish
+
+# 可选优化：排除不需要构建的模块（如主应用app）
+exclude:
+    - app
